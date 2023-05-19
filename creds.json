@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "python-sporstgrid",
+  "private_key_id": "bf77fc5f12d0f47e5788f8909ed42b7f5654537a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0keNrGkV/y6gv\nYUUa6iy/QuSMpRcCfIU8CqSAEvKakuG4gtTatV3mIxr3onHu8JIkSzP/Fi48nE9F\n+3T9flTzHnADOVPuusHgu9EcunqmKNbodzcFhsXFnCosJK3vF+UAl+xen/HGiWf/\nYMBXtlyRWyYIOmPr1ngVuLSzxzLjhzZSn0wRWBBCgRiPvl/rtmTbbZ4p8cyoS4/S\nNOV/vRwYToaIfX2naZrM83XZnFn3hUFbU294DFqaBLom9cyBQIOqIn02ZVqhR1KS\nhizpumhWdcXvu5nnyfR2eBs1o2eSqj2H7H6rgfRr2+PFStKM2o+OJZSH+NY6E8pF\nu+wHJIXXAgMBAAECggEAA6neFQM1xm+psY8QqYjMxZ35fcevstOMmc5BeNO+66ya\nkHV0ahzkkycX2fmyxBKfdHBjgAPBhmX0JHWt8aK0MzE6kTuC3MTElZGvSXJDIMc9\nV6lrirIppbu9uKLkizBPQMwpoIswNZiowoFXsFqOgD3QL2SNOHC5LlT5XZhnYOm0\nP/8pDhBD785NPmFdQxpxer47GgsXDVuRJbPQmzkfoS9aqkZ/zfE0dy2y73O5aNrA\nHogEyQKjaa4uEYvHtVrqV+otPTS32nxCdF++2tGSfMeCE0M4ogoUNBfR6I30007/\n086/abjoA85wHdtD7rE8Qpog5pg9HyE3qSfM6FQkIQKBgQD0qNioX0CMvvUaIqRY\nGXlcvSUi5+hgfKf2M9gpAuQsk+NLBpYqOxODjaE0x6YZ4wNS30PoajAgyf+xVgwf\nU21DduFaKrMVStTa58KyzzA9RFXeDJg0jdDpulJq+Q1pl86OLmyYZFr8rVZg6TC3\nvEaS3R4ZmMZO1wsMdfF1A5HMJwKBgQC88Iw6mHzpmtx2LTF1qmCaBQ2pWRp5oCDn\nWUBgAIZ/RwFOUXufUrpiY2vGRX86xTgBXMe3oVIJXLVwk/lqN4YrLtq+676lPgnO\noe7Q9EXC6KrgOvBU30I4da1LBb21WGWjYsI3LZzYrIdzh3GeMTIQGqcuz2c1TGD1\n1IPsPVKW0QKBgAPpj01h+I5Hn3PDig0+mwo4nBdqzfR9CdKOEa7WNP/hfYj9mfki\n6LT51tIZPza6wprYpyVYTVy43jXfwmHd26lwhToD5Mk6YRz/B8YEOilApn7ehLCS\nc/zI1fiP8v71RoBPjb0CHdJckz0JfZXylM5Uat7N6p3oIm0YlbvhSruRAoGAAjhJ\nTX7xKMV7BaBuTlWcIPMiP/UeDIPHHzC7QuV+rwwkhckLTMnqCrHkWEYEwqoCiHGQ\nnyW0EwwVzabPbWINn4BDba7TZJmf/9+DMM1N7IZTS6Mlo7mjy4oGaTU+D11khFDq\nuz878ofEZ6UVvqgRUIMfp7skGUo2cWz3x9TInaECgYBxc80DsyjqSBe6rHTXEHRo\nCDw8vgK6Glk4RFCB8slmfud3oTZFS29NZch/bxWEDG/iprJ3QFhUUKlzRvNq0/yt\nAdOsEHJwPCvUl5nubLxMCFKgY62QsYvitBt/sBSRcoXVewh/TKa0dn9JqvaL4u1P\nfAvSSYwnyzj/98KkJsNGig==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sportsgrid@python-sporstgrid.iam.gserviceaccount.com",
+  "client_id": "102195824142884646921",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sportsgrid%40python-sporstgrid.iam.gserviceaccount.com"
+}
