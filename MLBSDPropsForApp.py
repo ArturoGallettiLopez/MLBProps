@@ -111,11 +111,12 @@ header= {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) '
 # webhook= https://hooks.slack.com/services/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
 #Provide Channel Webhook for:
 #mlb_activity_log
-webhook= 'https://hooks.slack.com/services/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'
+webhook= 'https://hooks.slack.com/services/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'
+
 #Setup Sendslack
 def send_slack_message(message):
     payload = '{"text":"%s"}' % message
-    response = requests.post('https://hooks.slack.com/services/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',
+    response = requests.post('https://hooks.slack.com/services/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',
                             data=payload)
     print(message)
 
@@ -170,6 +171,9 @@ try:
     credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope) 
     gc = authorize(credentials)
     timenow = datetime.now(ny)
+    sheet = gc.open('MLBGetProps')
+    Goal = sheet.worksheet("Scrape")
+    Goal.update('b1', timestart.strftime("%B %d, %Y %H:%M:%S"))
     send_slack_message(':billed_cap:3. Connected to Google Debug Sheet:'+timenow.strftime("%B %d, %Y %H:%M:%S"))
 except:
     timenow = datetime.now(ny)
@@ -205,6 +209,7 @@ try:
     set_with_dataframe(Goal, combined, row=1,col=1)
     timenow = datetime.now(ny)
     Goal.update('n1', timenow.strftime("%B %d, %Y %H:%M:%S"))
+    
 
     #Output the MLB Player map (for actIve players on Rosters) to SQL:
     #Send to SQL
@@ -235,6 +240,17 @@ try:
 except:
     timenow = datetime.now(ny)
     send_slack_message(':billed_cap:5. Failed to Setup Game Table:'+timenow.strftime("%B %d, %Y %H:%M:%S"))
+
+
+# In[ ]:
+
+
+#Print out the Games to the sheet
+Goal = sheet.worksheet("MLB_Game_IDs")
+sheet.values_clear("MLB_Game_IDs!a1:j2000")
+set_with_dataframe(Goal,MlBGames, row=1,col=1)
+timenow = datetime.now(ny)
+Goal.update('k2', timenow.strftime("%B %d, %Y %H:%M:%S"))
 
 
 # In[ ]:
@@ -376,6 +392,7 @@ try:
     sheet.values_clear("Q4Proj!a1:bg2000")
     set_with_dataframe(Goal,Q4projectionsFinal, row=1,col=1)
     timenow = datetime.now(ny)
+    Goal.update('av2', timenow.strftime("%B %d, %Y %H:%M:%S"))
     send_slack_message(':billed_cap:6. Got Q4 Player Projections:'+timenow.strftime("%B %d, %Y %H:%M:%S"))
 except:
     timenow = datetime.now(ny)
@@ -597,8 +614,10 @@ SDPropsFinal= dfprops2[["PlayerName","Position","Team", "MoneyLine", "BetSelecti
 
 print('Push the props')
 Goal = sheet.worksheet("PropFeedAll")
-sheet.values_clear("PropFeedAll!a1:r40000")
+sheet.values_clear("PropFeedAll!a1:v40000")
 set_with_dataframe(Goal, SDPropsFinal, row=1,col=1)
+timenow = datetime.now(ny)
+Goal.update('x2', timenow.strftime("%B %d, %Y %H:%M:%S"))
     
 
 
