@@ -377,22 +377,51 @@ try:
                     Q4_Prob_0_to_10_K= ''
                     Q4_Prob_0_to_11_K= ''
                     Q4_Prob_0_to_12_K= ''
+
+                #Projections for the Hitter Props
+                try:
+                    Q4_Hits= player['attributes']['statisticsHittingOverallOnbaseH']
+                    Q4_Singles= player['attributes']['statisticsHittingOverallOnbaseS']
+                    Q4_Doubles= player['attributes']['statisticsHittingOverallOnbaseD']
+                    Q4_Triples= player['attributes']['statisticsHittingOverallOnbaseT']
+                    Q4_HR= player['attributes']['statisticsHittingOverallOnbaseHr']
+                    Q4_Bases= player['attributes']['statisticsHittingOverallOnbaseTb']
+                    Q4_Runs= player['attributes']['statisticsHittingOverallRunsTotal']
+                    Q4_RBI= player['attributes']['statisticsHittingOverallRbi']
+
+                except:
+                    Q4_Hits= ''
+                    Q4_Singles= ''
+                    Q4_Doubles= ''
+                    Q4_Triples= ''
+                    Q4_HR= ''
+                    Q4_Bases= ''
+                    Q4_Runs= ''
+                    Q4_RBI= ''
                 
-                row=[gamelink, GameID, Day, DateTime, AwayTeam, HomeTeam, SR_GameID, Q4PlayerID, Q4_Prob_0_Hits, Q4_Prob_0_to_1_Hits, Q4_Prob_0_to_2_Hits, Q4_Prob_0_Singles, Q4_Prob_0_to_1_Singles, Q4_Prob_0_Doubles, Q4_Prob_0_to_1_Doubles, Q4_Prob_0_Triples, Q4_Prob_0_to_1_Triples, Q4_Prob_0_TotalBases, Q4_Prob_0_to_1_TotalBases, Q4_Prob_0_to_2_TotalBases, Q4_Prob_0_Runs, Q4_Prob_0_to_1_Runs, Q4_Prob_0_RBI, Q4_Prob_0_to_1_RBI, Q4_Prob_0_HomeRun, Q4_Prob_0_to_1_HomeRun, Q4_Prob_0_K, Q4_Prob_0_to_1_K, Q4_Prob_0_to_2_K, Q4_Prob_0_to_3_K, Q4_Prob_0_to_4_K, Q4_Prob_0_to_5_K, Q4_Prob_0_to_6_K, Q4_Prob_0_to_7_K, Q4_Prob_0_to_8_K, Q4_Prob_0_to_9_K, Q4_Prob_0_to_10_K, Q4_Prob_0_to_11_K, Q4_Prob_0_to_12_K]
+                #Projections for the Pitcher Props
+                try:
+                    Q4_Ks= player['attributes']['statisticsPitchingOverallOutsKtotal']
+                except:
+                    Q4_Ks= ''
+
+
+
+                row=[gamelink, GameID, Day, DateTime, AwayTeam, HomeTeam, SR_GameID, Q4PlayerID, Q4_Prob_0_Hits, Q4_Prob_0_to_1_Hits, Q4_Prob_0_to_2_Hits, Q4_Prob_0_Singles, Q4_Prob_0_to_1_Singles, Q4_Prob_0_Doubles, Q4_Prob_0_to_1_Doubles, Q4_Prob_0_Triples, Q4_Prob_0_to_1_Triples, Q4_Prob_0_TotalBases, Q4_Prob_0_to_1_TotalBases, Q4_Prob_0_to_2_TotalBases, Q4_Prob_0_Runs, Q4_Prob_0_to_1_Runs, Q4_Prob_0_RBI, Q4_Prob_0_to_1_RBI, Q4_Prob_0_HomeRun, Q4_Prob_0_to_1_HomeRun, Q4_Prob_0_K, Q4_Prob_0_to_1_K, Q4_Prob_0_to_2_K, Q4_Prob_0_to_3_K, Q4_Prob_0_to_4_K, Q4_Prob_0_to_5_K, Q4_Prob_0_to_6_K, Q4_Prob_0_to_7_K, Q4_Prob_0_to_8_K, Q4_Prob_0_to_9_K, Q4_Prob_0_to_10_K, Q4_Prob_0_to_11_K, Q4_Prob_0_to_12_K, Q4_Hits, Q4_Singles, Q4_Doubles, Q4_Triples, Q4_HR, Q4_Bases, Q4_Runs, Q4_RBI, Q4_Ks]
                 projs.append(row)
         except:
             dummy=1
     Q4projections=DataFrame(projs)
 
 
-    Q4projections.columns = ['gamelink', 'GameID', 'Day', 'DateTime', 'AwayTeam', 'HomeTeam', 'SR_GameID', 'Q4_ID', 'Q4_Prob_0_Hits', 'Q4_Prob_0_to_1_Hits', 'Q4_Prob_0_to_2_Hits', 'Q4_Prob_0_Singles', 'Q4_Prob_0_to_1_Singles', 'Q4_Prob_0_Doubles', 'Q4_Prob_0_to_1_Doubles', 'Q4_Prob_0_Triples', 'Q4_Prob_0_to_1_Triples', 'Q4_Prob_0_TotalBases', 'Q4_Prob_0_to_1_TotalBases', 'Q4_Prob_0_to_2_TotalBases', 'Q4_Prob_0_Runs', 'Q4_Prob_0_to_1_Runs', 'Q4_Prob_0_RBI', 'Q4_Prob_0_to_1_RBI', 'Q4_Prob_0_HomeRun', 'Q4_Prob_0_to_1_HomeRun', 'Q4_Prob_0_K', 'Q4_Prob_0_to_1_K', 'Q4_Prob_0_to_2_K', 'Q4_Prob_0_to_3_K', 'Q4_Prob_0_to_4_K', 'Q4_Prob_0_to_5_K', 'Q4_Prob_0_to_6_K', 'Q4_Prob_0_to_7_K', 'Q4_Prob_0_to_8_K', 'Q4_Prob_0_to_9_K', 'Q4_Prob_0_to_10_K', 'Q4_Prob_0_to_11_K', 'Q4_Prob_0_to_12_K']
+    Q4projections.columns = ['gamelink', 'GameID', 'Day', 'DateTime', 'AwayTeam', 'HomeTeam', 'SR_GameID', 'Q4_ID', 'Q4_Prob_0_Hits', 'Q4_Prob_0_to_1_Hits', 'Q4_Prob_0_to_2_Hits', 'Q4_Prob_0_Singles', 'Q4_Prob_0_to_1_Singles', 'Q4_Prob_0_Doubles', 'Q4_Prob_0_to_1_Doubles', 'Q4_Prob_0_Triples', 'Q4_Prob_0_to_1_Triples', 'Q4_Prob_0_TotalBases', 'Q4_Prob_0_to_1_TotalBases', 'Q4_Prob_0_to_2_TotalBases', 'Q4_Prob_0_Runs', 'Q4_Prob_0_to_1_Runs', 'Q4_Prob_0_RBI', 'Q4_Prob_0_to_1_RBI', 'Q4_Prob_0_HomeRun', 'Q4_Prob_0_to_1_HomeRun', 'Q4_Prob_0_K', 'Q4_Prob_0_to_1_K', 'Q4_Prob_0_to_2_K', 'Q4_Prob_0_to_3_K', 'Q4_Prob_0_to_4_K', 'Q4_Prob_0_to_5_K', 'Q4_Prob_0_to_6_K', 'Q4_Prob_0_to_7_K', 'Q4_Prob_0_to_8_K', 'Q4_Prob_0_to_9_K', 'Q4_Prob_0_to_10_K', 'Q4_Prob_0_to_11_K', 'Q4_Prob_0_to_12_K', 'Q4_Hits', 'Q4_Singles', 'Q4_Doubles', 'Q4_Triples', 'Q4_HR', 'Q4_Bases', 'Q4_Runs', 'Q4_RBI', 'Q4_Ks']
 
     Q4projectionsFinal=combined.merge(Q4projections, on='Q4_ID')
     Goal = sheet.worksheet("Q4Proj")
-    sheet.values_clear("Q4Proj!a1:bg2000")
+    sheet.values_clear("Q4Proj!a1:bf2000")
     set_with_dataframe(Goal,Q4projectionsFinal, row=1,col=1)
     timenow = datetime.now(ny)
-    Goal.update('av2', timenow.strftime("%B %d, %Y %H:%M:%S"))
+    Goal.update('bi2', timenow.strftime("%B %d, %Y %H:%M:%S"))
     send_slack_message(':billed_cap:6. Got Q4 Player Projections:'+timenow.strftime("%B %d, %Y %H:%M:%S"))
 except:
     timenow = datetime.now(ny)
@@ -476,19 +505,33 @@ for x in range(0,p):
                         if book == 'Consensus':
                             dummy=0
                         else:
+                            #Make Short Name Alises:
+                            if BettingBetType == 'Total Home Runs': BettingBetType = 'HRs'
+                            if BettingBetType == 'To Hit A Home Run': BettingBetType = 'Hit a HR'
+                            
+                            if BettingBetType == 'Total Hits': BettingBetType = 'Hits'
+                            if BettingBetType == 'To Get A Hit': BettingBetType = 'Get a Hit'
+
+                            
+                            if BettingBetType == 'To Hit A Single': BettingBetType = 'Hit a Single'
+                            if BettingBetType == 'To Hit A Double': BettingBetType = 'Hit a Double'
+                            if BettingBetType == 'To Hit A Triple': BettingBetType = 'Hit a Triple'
+                            
+                            if BettingBetType == 'Total RBIs': BettingBetType = 'RBIs'
+                            if BettingBetType == 'To Record an RBI': BettingBetType = 'Get an RBI'
+                            
+
+                            if BettingBetType == 'Total Runs': BettingBetType = 'Runs'
+                            if BettingBetType == 'To Score A Run': BettingBetType = 'Get a Run'
+                            
+                            if BettingBetType == 'Total Pitching Strikeouts': BettingBetType = 'Ks'
+
                             if BettingOutcomeType =="Over": 
                                 BetName= BettingOutcomeType + ':'	+ str(Value)+' '+ BettingBetType
                                 btype="Over"
                                 
                             if BettingOutcomeType =="Yes":
                                 BetName= BettingBetType
-                                if BettingBetType == 'To Hit A Home Run': BettingBetType = 'Total Home Runs'
-                                if BettingBetType == 'To Get A Hit': BettingBetType = 'Total Hits'
-                                if BettingBetType == 'To Record an RBI': BettingBetType = 'Total RBIs'
-                                if BettingBetType == 'To Hit A Double': BettingBetType = 'Doubles'
-                                if BettingBetType == 'To Score A Run': BettingBetType = 'Total Runs'
-                                if BettingBetType == 'To Hit A Single': BettingBetType = 'Singles'
-                                if BettingBetType == 'To Hit A Triple': BettingBetType = 'Triples'
                                 Value=.5 
                                 btype="Yes"
                             
@@ -501,77 +544,96 @@ for x in range(0,p):
                             Edge=''
                             Stars=''
                             RecommendedBet= 'No'
+                            Q4Projection=''
                             
                             try:
                                 #Lookup the relevant Q4 Projections
                                 q4lookup1=Q4projectionsFinal.loc[Q4projectionsFinal['GameID']==GameID]
                                 q4lookup=q4lookup1.loc[q4lookup1['FantasyDataPlayerID']==PlayerID]
                                 #Home Runs
-                                if BettingBetType == 'Total Home Runs' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_HomeRun']        
-                                if BettingBetType == 'Total Home Runs' and Value == 1.5:
+                                if (BettingBetType == 'HRs' or BettingBetType == 'Hit a HR') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_HomeRun']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_HR']        
+                                if (BettingBetType == 'HRs' or BettingBetType == 'Hit a HR') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_HomeRun']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_HR']
                                 #Hits
-                                if BettingBetType == 'Total Hits' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Hits']        
-                                if BettingBetType == 'Total Hits' and Value == 1.5:
+                                if (BettingBetType == 'Hits' or BettingBetType == 'Get a Hit') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Hits']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Hits']
+                                if (BettingBetType == 'Hits' or BettingBetType == 'Get a Hit') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_Hits']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Hits']
                                 #Singles
-                                if BettingBetType == 'Singles' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Singles']        
-                                if BettingBetType == 'Singles' and Value == 1.5:
+                                if (BettingBetType == 'Singles' or BettingBetType == 'Hit a Single') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Singles']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Singles']
+                                if (BettingBetType == 'Singles' or BettingBetType == 'Hit a Single') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_Singles']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Singles']
                                 #Doubles
-                                if BettingBetType == 'Doubles' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Doubles']        
-                                if BettingBetType == 'Doubles' and Value == 1.5:
+                                if (BettingBetType == 'Doubles' or BettingBetType == 'Hit a Double') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Doubles']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Doubles']
+                                if (BettingBetType == 'Doubles' or BettingBetType == 'Hit a Double') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_Doubles']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Doubles']
                                 #Triples
-                                if BettingBetType == 'Triples' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Triples']        
-                                if BettingBetType == 'Triples' and Value == 1.5:
+                                if (BettingBetType == 'Triples' or BettingBetType == 'Hit a Triple') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Triples']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Triples']
+                                if (BettingBetType == 'Triples' or BettingBetType == 'Hit a Triple') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_Triples']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Triples']
                                 
                                 #Total Bases
                                 if BettingBetType == 'Total Bases' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_TotalBases']        
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_TotalBases']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Bases']
                                 if BettingBetType == 'Total Bases' and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_TotalBases']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Bases']
                                 
                                 #Total Runs
-                                if BettingBetType == 'Total Runs' and Value == .5:
-                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Runs']        
-                                if BettingBetType == 'Total Runs' and Value == 1.5:
+                                if (BettingBetType == 'Runs' or BettingBetType == 'Get a Run') and Value == .5:
+                                    Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_Runs']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Runs']        
+                                if (BettingBetType == 'Runs' or BettingBetType == 'Get a Run')and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_Runs']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Runs']        
                                 
                                 #Total RBIs
-                                if BettingBetType == 'Total RBIs' and Value == .5:
+                                if (BettingBetType == 'RBIs' or BettingBetType == 'Get an RBI') and Value == .5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_RBI']        
-                                if BettingBetType == 'Total RBIs' and Value == 1.5:
+                                    Q4Projection=q4lookup.iloc[0]['Q4_RBI']        
+                                if (BettingBetType == 'RBIs' or BettingBetType == 'Get an RBI') and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_RBI']
+                                    Q4Projection=q4lookup.iloc[0]['Q4_RBI'] 
 
                                 #Total Pitching Strikeouts
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == .5:
+                                if BettingBetType == 'Ks':
+                                    Q4Projection=Q4_Ks
+                                if BettingBetType == 'Ks' and Value == .5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_K']        
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 1.5:
+                                if BettingBetType == 'Ks' and Value == 1.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_1_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 2.5:
+                                if BettingBetType == 'Ks' and Value == 2.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_2_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 3.5:
+                                if BettingBetType == 'Ks' and Value == 3.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_3_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 4.5:
+                                if BettingBetType == 'Ks' and Value == 4.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_4_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 5.5:
+                                if BettingBetType == 'Ks' and Value == 5.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_5_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 6.5:
+                                if BettingBetType == 'Ks' and Value == 6.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_6_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 7.5:
+                                if BettingBetType == 'Ks' and Value == 7.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_7_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 8.5:
+                                if BettingBetType == 'Ks' and Value == 8.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_8_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 9.5:
+                                if BettingBetType == 'Ks' and Value == 9.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_9_K']
-                                if BettingBetType == 'Total Pitching Strikeouts' and Value == 10.5:
+                                if BettingBetType == 'Ks' and Value == 10.5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_to_10_K']
                                 
                                 
@@ -599,22 +661,22 @@ for x in range(0,p):
 
                             except:
                                 dummy =1
-                            row= [HomeTeam, AwayTeam, GameID, GameStartTime, gamelink, book, BettingBetType,BettingPeriodType,PlayerID,PlayerName,Updated,Value,bookUrl, ML, btype, BetName, ImpliedOdds, Q4Odds, Edge,Stars,RecommendedBet]
+                            row= [HomeTeam, AwayTeam, GameID, GameStartTime, gamelink, book, BettingBetType,BettingPeriodType,PlayerID,PlayerName,Updated,Value,bookUrl, ML, btype, BetName, ImpliedOdds, Q4Odds, Edge,Stars,RecommendedBet, Q4Projection]
                             props.append(row)
                             
 
 dfprops=DataFrame(props)
 
 
-dfprops.columns = ["HomeTeam", "AwayTeam", "GameID", "GameStartTime", "gamelink", "book", "BettingBetType","BettingPeriodType","PlayerID","PlayerName","Updated","Value","bookUrl", "MoneyLine", "BetSelection","BetName", "ImpliedOdds", "Q4OddsUnder", "Edge","Stars","RecommendedBet"]
+dfprops.columns = ["HomeTeam", "AwayTeam", "GameID", "GameStartTime", "gamelink", "book", "BettingBetType","BettingPeriodType","PlayerID","PlayerName","Updated","Value","bookUrl", "MoneyLine", "BetSelection","BetName", "ImpliedOdds", "Q4OddsUnder", "Edge","Stars","RecommendedBet","Q4Projection"]
 
 dfprops2= merge(dfprops,PlayerInfo,how="left",on=["PlayerID"])
 
-SDPropsFinal= dfprops2[["PlayerName","Position","Team", "MoneyLine", "BetSelection","Value", "BettingBetType", "book","PlayerID","Updated","bookUrl","HomeTeam", "AwayTeam", "GameID", "GameStartTime", "gamelink", "BetName","ImpliedOdds", "Q4OddsUnder", "Edge","Stars","RecommendedBet"]].copy()
+SDPropsFinal= dfprops2[["PlayerName","Position","Team", "MoneyLine", "BetSelection","Value", "BettingBetType", "book","PlayerID","Updated","bookUrl","HomeTeam", "AwayTeam", "GameID", "GameStartTime", "gamelink", "BetName","ImpliedOdds", "Q4OddsUnder", "Edge","Stars","RecommendedBet","Q4Projection"]].copy()
 
 print('Push the props')
 Goal = sheet.worksheet("PropFeedAll")
-sheet.values_clear("PropFeedAll!a1:v40000")
+sheet.values_clear("PropFeedAll!a1:w40000")
 set_with_dataframe(Goal, SDPropsFinal, row=1,col=1)
 timenow = datetime.now(ny)
 Goal.update('x2', timenow.strftime("%B %d, %Y %H:%M:%S"))
