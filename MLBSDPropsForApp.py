@@ -612,7 +612,7 @@ for x in range(0,p):
 
                                 #Total Pitching Strikeouts
                                 if BettingBetType == 'Ks':
-                                    Q4Projection=Q4_Ks
+                                    Q4Projection=q4lookup.iloc[0]['Q4_Ks']
                                 if BettingBetType == 'Ks' and Value == .5:
                                     Q4Odds=q4lookup.iloc[0]['Q4_Prob_0_K']        
                                 if BettingBetType == 'Ks' and Value == 1.5:
