@@ -661,8 +661,11 @@ for x in range(0,p):
 
                             except:
                                 dummy =1
-                            row= [HomeTeam, AwayTeam, GameID, GameStartTime, gamelink, book, BettingBetType,BettingPeriodType,PlayerID,PlayerName,Updated,Value,bookUrl, ML, btype, BetName, ImpliedOdds, Q4Odds, Edge,Stars,RecommendedBet, Q4Projection]
-                            props.append(row)
+                            try:                                
+                                row= [HomeTeam, AwayTeam, GameID, GameStartTime, gamelink, book, BettingBetType,BettingPeriodType,PlayerID,PlayerName,Updated,Value,bookUrl, ML, btype, BetName, ImpliedOdds, Q4Odds, Edge,Stars,RecommendedBet, Q4Projection]
+                                props.append(row)
+                            except:
+                                dummy =1
                             
 
 dfprops=DataFrame(props)
