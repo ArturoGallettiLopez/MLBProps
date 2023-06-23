@@ -439,8 +439,8 @@ except:
 # 5. Stars
 # 6. RecommendedBet
 print('Get the props from SportsData' )
-linkurl1= 'https://api.sportsdata.io/v3/mlb/odds/json/BettingEventsByDate/'+str(today.date()) +'?key=ab5ccb732f1d48febbdb890d300d656e'
-linkurl2= 'https://api.sportsdata.io/v3/mlb/odds/json/BettingEventsByDate/'+str(tomorrow.date()) +'?key=ab5ccb732f1d48febbdb890d300d656e'
+linkurl1= 'https://api.sportsdata.io/v3/mlb/odds/json/BettingEventsByDate/'+str(today.date()) +'?key=595fb6aeefe14bfda426a99873e60b2e'
+linkurl2= 'https://api.sportsdata.io/v3/mlb/odds/json/BettingEventsByDate/'+str(tomorrow.date()) +'?key=595fb6aeefe14bfda426a99873e60b2e'
 links = [linkurl1,linkurl2]
 
 with urllib.request.urlopen("https://api.sportsdata.io/v3/mlb/scores/json/Players?key=9080515fbdff4aa095490cadda5ecd30") as url:
@@ -458,13 +458,13 @@ for link in links:
     for game in data:
         
         try: #NOTE: This is using a trial key
-            row= [game['HomeTeam'],game['AwayTeam'],game['GameID'],game['GameStartTime'],'https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=ab5ccb732f1d48febbdb890d300d656e']
+            row= [game['HomeTeam'],game['AwayTeam'],game['GameID'],game['GameStartTime'],'https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=595fb6aeefe14bfda426a99873e60b2e']
             games.append(row)
-            print('https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=ab5ccb732f1d48febbdb890d300d656e')
+            print('https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=595fb6aeefe14bfda426a99873e60b2e')
         except:
-            row= [game['HomeTeam'],game['AwayTeam'],game['GameID'],game['GameStartTime'],'https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=ab5ccb732f1d48febbdb890d300d656e']
+            row= [game['HomeTeam'],game['AwayTeam'],game['GameID'],game['GameStartTime'],'https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=595fb6aeefe14bfda426a99873e60b2e']
             games=row
-            print('https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=ab5ccb732f1d48febbdb890d300d656e')
+            print('https://api.sportsdata.io/v3/mlb/odds/json/BettingPlayerPropsByGameID/'+str(game['GameID'])+'?key=595fb6aeefe14bfda426a99873e60b2e')
 
 dfgames=DataFrame(games)
 dfgames.columns = ["HomeTeam", "AwayTeam","GameID","GameStartTime","GameLink"]
